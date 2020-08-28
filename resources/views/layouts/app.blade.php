@@ -10,84 +10,9 @@
 
 <body id="body">
 
-    <!-- Header Start -->
-    <header class="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- header Nav Start -->
-                    <nav class="navbar navbar-expand-md">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
-                    &#x2630;</button> <a class="navbar-brand"
-                    href="index.html">
-
-                    <img src="images/logo.png" alt="Logo">
-
-                </a>
-<!-- Collect the nav links, forms,
-    and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-                aria-haspopup="true" aria-expanded="false">Portfolio</a>
-                <ul
-                class="dropdown-menu">
-                <li class="dropdown-item"><a href="portfolio.html">Portfolio Filter</a>
-                </li>
-                <li class="dropdown-item"><a href="portfolio-single.html">Portfolio Single</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item"><a href="service.html" class="nav-link">Service</a>
-        </li>
-        <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-            aria-haspopup="true" aria-expanded="false">Blog</a>
-            <ul
-            class="dropdown-menu">
-            <li class="dropdown-item"><a href="blog-grid.html">Blog Grid</a>
-            </li>
-            <li class="dropdown-item"><a href="blog-single.html">Blog Single</a>
-            </li>
-            <li class="dropdown-item"><a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-            </li>
-            <li class="dropdown-item"><a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-            </li>
-            <li class="dropdown-item"><a href="blog-full-width.html">Blog Full Width</a>
-            </li>
-        </ul>
-    </li>
-    <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-        aria-haspopup="true" aria-expanded="false">Pages</a>
-        <ul
-        class="dropdown-menu">
-        <li class="dropdown-item"><a href="about.html">About Us</a>
-        </li>
-        <li class="dropdown-item"><a href="coming-soon.html">Coming Soon</a>
-        </li>
-        <li class="dropdown-item"><a href="404.html">404 Page</a>
-        </li>
-        <li class="dropdown-item"><a href="faq.html">FAQ</a>
-        </li>
-        <li class="dropdown-item"><a href="pricing.html">Pricing Table</a>
-        </li>
-    </ul>
-</li>
-<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
-</li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
-<!-- /.container-fluid -->
-</nav>
-</div>
-</div>
-</div>
-</header>
-<!-- header close -->
+    {{-- Navigation Bar --}}
+    @include('partials.app.navbar')
+    
 <!-- Slider Start -->
 <section class="slider">
     <div class="container">
