@@ -25,24 +25,9 @@
     {{-- Service Section --}}
     @include('content.app.service')
 
+    {{-- Call To Action Section --}}
+    @include('content.app.calltoaction')
     
-    <!-- Call to action Start -->
-    <section class="call-to-action bg-1 section-sm overly">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="block">
-                        <h2>We design delightful digital experiences.</h2>
-                        <p>Read more about what we do and our philosophy of design. Judge for yourself
-                            The work and results
-                            <br>we&#x2019;ve achieved for other clients, and meet our highly experienced
-                        Team who just love to design.</p> <a class="btn btn-main btn-solid-border"
-                        href="#">Tell Us Your Story</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Content Start -->
     <section class="testimonial">
         <div class="container">
