@@ -18,99 +18,14 @@
 
     {{-- About Us Section --}}
     @include('content.app.about')
+
+    {{-- Feature Section --}}
+    @include('content.app.feature')
+
+    {{-- Service Section --}}
+    @include('content.app.service')
+
     
-    <section class="feature bg-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-md-6">
-                    <h2 class="section-subtitle">WE BELIEVE IN GREAT IDEAS</h2>
-                    <p>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur
-                        ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor
-                    mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur
-                        ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor
-                    mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur
-                        ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor
-                    mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <a
-                    href="#" class="btn btn-view-works">View Works</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Service Start -->
-    <section class="service">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h2>Our Services</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia
-                        and Consonantia,
-                        <br>there live the blind texts. Separated they live in Bookmarksgrove right
-                    at the coast of the Semantics</p>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="icon ion-coffee"></i>
-                        <h4>Branding</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-compass"></i>
-                        <h4>Web Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-image"></i>
-                        <h4>App Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-bug"></i>
-                        <h4>Start Up</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-headphone"></i>
-                        <h4>Logo Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-leaf"></i>
-                        <h4>Development</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-planet"></i>
-                        <h4>Brand Identity</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-item"> <i class="ion-earth"></i>
-                        <h4>Brand Identity</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Call to action Start -->
     <section class="call-to-action bg-1 section-sm overly">
         <div class="container">
