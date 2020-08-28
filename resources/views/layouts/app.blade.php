@@ -15,37 +15,10 @@
 
     {{-- Above The Fold Hero Section --}}
     @include('content.app.hero')
+
+    {{-- About Us Section --}}
+    @include('content.app.about')
     
-    <!-- Wrapper Start -->
-    <section class="about section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-12">
-                    <div class="block">
-                        <div class="section-title">
-                            <h2>About Us</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia
-                                and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                            right at the coast of the Semantics</p>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id</p>
-                    </div>
-                </div>
-                <!-- .col-lg-7 close -->
-                <div class="col-lg-5 col-md-12">
-                    <div class="block">
-                        <img src="images/wrapper-img.png" alt="Img">
-                    </div>
-                </div>
-                <!-- .col-lg-5 close -->
-            </div>
-        </div>
-    </section>
     <section class="feature bg-2">
         <div class="container">
             <div class="row">
