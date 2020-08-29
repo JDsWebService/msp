@@ -1,5 +1,5 @@
 {{-- @include('content.app.about') --}}
-<section class="about section">
+<section class="about section" id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-12">
