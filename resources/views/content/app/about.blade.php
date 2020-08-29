@@ -14,7 +14,7 @@
             <!-- .col-lg-7 close -->
             <div class="col-lg-5 col-md-12">
                 <div class="block">
-                    <img src="images/wrapper-img.png" alt="Img">
+                    <img src="/imgs/about_background.png" alt="Maine Sky Pixels Logo Image">
                 </div>
             </div>
             <!-- .col-lg-5 close -->
