@@ -862,8 +862,8 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .feature {
-  background: url("../img/featue-bg.jpg");
   background-position: 50% 94px;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/imgs/feature_background.png");
   display: block;
   position: relative;
   background-attachment: fixed;
@@ -873,12 +873,22 @@ font header .navbar-default .navbar-nav li a:hover {
   padding: 100px 0;
 }
 
+/* Feature section content box */
+.feature .feature-box {
+  background: linear-gradient(rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60));
+  border-radius: 20px;
+  padding: 20px;
+}
+/* Feature Section Content Box Paragraph & Header Styles */
+.feature .feature-box p, .feature .feature-box .section-subtitle {
+  color: #030303;
+}
+
 .feature h2 {
   margin-bottom: 30px;
 }
 
 .feature p {
-  color: #8d8f92;
   margin-bottom: 20px;
 }
 
@@ -2095,12 +2105,6 @@ font header .navbar-default .navbar-nav li a:hover {
   background-image: url("../images/call-to-action-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.bg-2 {
-  background: url("../images/featue-bg.jpg");
-  background-size: cover;
   background-attachment: fixed;
 }
 

@@ -1,14 +1,13 @@
 {{-- @include('content.app.feature') --}}
-<section class="feature bg-2">
+<section class="feature">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 offset-md-6">
-                <h2 class="section-subtitle">WE BELIEVE IN GREAT IDEAS</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet dignissimos autem voluptatibus accusantium cum alias sunt, eius perspiciatis hic non sit pariatur architecto aperiam, fuga maxime, iure similique excepturi! Natus.</p>
-                <p>Dolorum inventore est perspiciatis animi quas delectus unde. Sint tempora mollitia saepe eius id repellendus, illum laborum itaque nam autem quas adipisci dolorem neque voluptate, illo. Ut fugiat earum, neque!</p>
-                <p>Magni distinctio vero, ipsum, sint a fugiat delectus nostrum atque porro ab pariatur labore neque culpa enim totam non sed cupiditate blanditiis itaque. Assumenda, rem iste explicabo, numquam esse dolores.</p>
-                <p>At temporibus minus nihil placeat recusandae labore explicabo atque officia tempore corporis, alias ad, consequatur! Rem qui veniam mollitia incidunt, at officia, a? Dolorum consequuntur, reiciendis laborum iste. Qui, tenetur.</p>
-                <a href="#" class="btn btn-view-works">View Works</a>
+            <div class="col-lg-6 offset-md-6 feature-box">
+                <h2 class="section-subtitle">SETTING THE BAR TO NEW HEIGHTS</h2>
+                <p>Great aerial photography starts with having the right equipment. At Maine Sky Pixels we use DJI Mavic Series drones for this purpose. As the industry leader in sUAS drone technology DJI provides the best platform to achieve those amazing photos and videos for your project.</p>
+                <p>Taking great photos is more than just a fancy drone, while our pilots spend hours training to get the perfect shot we also edit those photos in Adobe Lightroom to give them that extra pop. All of our photography packages include basic Adobe Lightroom editing.</p> 
+                <p>Don't settle for less than the best aerial photography for your project contact us today to learn more.</p>
+                <a href="#" class="btn btn-view-works">Find Out More</a>
             </div>
         </div>
     </div>
