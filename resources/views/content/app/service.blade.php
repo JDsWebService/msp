@@ -4,67 +4,38 @@
         <div class="row">
             <div class="section-title col-sm-12">
                 <h2>Our Services</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia
-                    and Consonantia,
-                    <br>there live the blind texts. Separated they live in Bookmarksgrove right
-                at the coast of the Semantics</p>
+                <p>Personal Photo and Video services for birthdays, weddings, events and more.</p>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="icon ion-coffee"></i>
-                    <h4>Branding</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="service-item"> <i class="fas fa-home"></i>
+                    <h4>Real Estate Photography</h4>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-compass"></i>
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
+            <div class="col-sm-4">
+                <div class="service-item"> <i class="fas fa-video"></i>
+                    <h4>Video Walkthroughs</h4>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-image"></i>
-                    <h4>App Design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
+            <div class="col-sm-4">
+                <div class="service-item"> <i class="fas fa-audio-description"></i>
+                    <h4>Commercial Photography for Advertising</h4>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-bug"></i>
-                    <h4>Start Up</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
+            <div class="col-sm-4">
+                <div class="service-item"> <i class="fas fa-broadcast-tower"></i>
+                    <h4>Live Stream On-Site Videography</h4>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-headphone"></i>
-                    <h4>Logo Design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
+            <div class="col-sm-4">
+                <div class="service-item"> <i class="fas fa-hard-hat"></i>
+                    <h4>Construction Timelines & Progress</h4>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-leaf"></i>
-                    <h4>Development</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-planet"></i>
-                    <h4>Brand Identity</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="service-item"> <i class="ion-earth"></i>
-                    <h4>Brand Identity</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut</p>
+            <div class="col-sm-4">
+                <div class="service-item"> <i class="fas fa-cubes"></i>
+                    <h4>Photogrammetry with Pix4D</h4>
                 </div>
             </div>
         </div>
