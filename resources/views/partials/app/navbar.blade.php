@@ -4,17 +4,17 @@
             <div class="col-lg-12">
                 <!-- header Nav Start -->
                 <nav class="navbar navbar-expand-md">
-                
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
-                    &#x2630;</button>
 
                     {{-- Brand Image --}}
                     <a class="navbar-brand" href="{{ route('index') }}">
                         <img src="/imgs/drone.png" style="width: 50px; height: 50px;" alt="Logo">
                         Maine Sky Pixels
                     </a>
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
+                    &#x2630;</button>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav ml-auto">
