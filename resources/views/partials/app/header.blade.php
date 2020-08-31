@@ -32,5 +32,7 @@
 
 {{-- Main Stylesheet --}}
 <link rel="stylesheet" href="/css/style.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
+{{-- Preloader --}}
+<link rel="stylesheet" href="/css/preloader.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
 
 

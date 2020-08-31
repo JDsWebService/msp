@@ -10,6 +10,9 @@
 
 <body id="body">
 
+    {{-- Preloader --}}
+    @include('partials.app.preloader')
+
     {{-- Navigation Bar --}}
     @include('partials.app.navbar')
 
