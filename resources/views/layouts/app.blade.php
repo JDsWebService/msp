@@ -13,6 +13,9 @@
     {{-- Navigation Bar --}}
     @include('partials.app.navbar')
 
+    {{-- Alert Messages --}}
+    @include('partials.app.messages')
+
     {{-- Content Pulled From Page --}}
     @yield('content')
     

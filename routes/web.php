@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\QuoteRequestMail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,13 @@ Auth::routes(['register' => false]);
 Route::prefix('admin')->name('admin.')->group(function () {
 	// Admin Dashboard
 	Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
+});
+
+Route::prefix('contact')->name('contact.')->group(function () {
+	Route::post('sendEmail', 'ContactController@sendEmail')->name('sendemail');
+	// Route::get('quoteEmailTemplate', function() {
+	// 	return new QuoteRequestMail();
+	// });
 });
 
 Route::get('/', 'PagesController@index')->name('index');

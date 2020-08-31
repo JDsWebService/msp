@@ -19,7 +19,10 @@
     {{-- Call To Action Section --}}
     @include('content.app.calltoaction')
     
+    {{-- Contact Form Section --}}
+    @include('content.app.contact')
+
     {{-- Testimonial Section --}}
-    @include('content.app.testimonial')
+    {{-- @include('content.app.testimonial') --}}
 
 @endsection
