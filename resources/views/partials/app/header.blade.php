@@ -13,7 +13,7 @@
 <title>Maine Sky Pixels - @yield('title')</title>
 
 {{-- Favicon --}}
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
 {{--**************** 
     Dependancies
