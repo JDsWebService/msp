@@ -1,3 +1,4 @@
+<span style="color: #718096;">
 @component('mail::message')
 # Contact Request Received
 
@@ -45,3 +46,4 @@ Button Text
 @endcomponent --}}
 
 @endcomponent
+</span>
