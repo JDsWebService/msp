@@ -1,10 +1,18 @@
 @component('mail::message')
 # Contact Request Received
 
+@if($emailType == 'admin')
+A customer has contacted you, requesting you get in touch with them. Please don't forget to respond within 24 business hours to their request!
+
+Thanks,
+MSP Automated System
+
+@else
 Thank you for your interest in Maine Sky Pixels! We have received your request, and someone will get back to you within 24 business hours.
 
 Thanks,<br>
 {{ config('app.name') }}
+@endif
 
 ## Summary
 

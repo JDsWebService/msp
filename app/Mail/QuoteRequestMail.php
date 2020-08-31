@@ -12,6 +12,7 @@ class QuoteRequestMail extends Mailable
     use Queueable, SerializesModels;
 
     public $data;
+    public $emailType;
     public $replyToEmail;
     public $fromEmail;
     public $subject;
@@ -21,11 +22,12 @@ class QuoteRequestMail extends Mailable
      *
      * @return void
      */
-    public function __construct($data, $type = null)
+    public function __construct($data, $emailType = null)
     {
         $this->data = $data;
+        $this->emailType = $emailType;
 
-        switch($type) {
+        switch($emailType) {
             case 'admin':
                 $this->replyToEmail = $this->data->email;
                 $this->fromEmail = $this->data->email;
@@ -50,6 +52,7 @@ class QuoteRequestMail extends Mailable
                     ->replyTo($this->replyToEmail)
                     ->from($this->fromEmail)
                     ->subject($this->subject)
-                    ->with('data', $this->data);
+                    ->with('data', $this->data)
+                    ->with('emailType', $this->emailType);
     }
 }
