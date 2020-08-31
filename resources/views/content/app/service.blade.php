@@ -1,5 +1,5 @@
 {{-- @include('content.app.service') --}}
-<section class="service">
+<section class="service" id="service">
     <div class="container">
         <div class="row">
             <div class="section-title col-sm-12">

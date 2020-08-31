@@ -5,11 +5,9 @@
             <div class="col-lg-12">
                 <div class="footer-manu">
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">How it works</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Terms</a></li>
+                        <li><a href="#about" class="scrollto">About Us</a></li>
+                        <li><a href="#contact" class="scrollto">Contact Us</a></li>
+                        <li><a href="#service" class="scrollto">Services</a></li>
                     </ul>
                 </div>
                 <p class="copyright">

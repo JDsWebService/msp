@@ -24,6 +24,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::prefix('contact')->name('contact.')->group(function () {
 	Route::post('sendEmail', 'ContactController@sendEmail')->name('sendemail');
+	// Debug Test Route for QuoteRequestMail
 	// Route::get('quoteEmailTemplate', function() {
 	// 	return new QuoteRequestMail();
 	// });
