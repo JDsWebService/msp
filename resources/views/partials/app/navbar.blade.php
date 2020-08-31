@@ -41,7 +41,7 @@
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
+                                <a href="#contact" class="nav-link scrollto">Contact</a>
                             </li>
                         </ul> {{-- /nav navbar-nav ml-auto --}}
                     </div> {{-- /collapse navbar-collapse --}}
