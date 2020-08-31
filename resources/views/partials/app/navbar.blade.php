@@ -12,7 +12,8 @@
 
                     {{-- Brand Image --}}
                     <a class="navbar-brand" href="{{ route('index') }}">
-                        <img src="images/logo.png" alt="Logo">
+                        <img src="/imgs/drone.png" style="width: 50px; height: 50px;" alt="Logo">
+                        Maine Sky Pixels
                     </a>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,6 +23,7 @@
                                 <a href="{{ route('index') }}" class="nav-link">Home</a>
                             </li>
                             {{-- Dropdown --}}
+                            <!--
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio</a>
                                 <ul class="dropdown-menu">
@@ -34,10 +36,14 @@
                                         <a href="#">Portfolio Single</a>
                                     </li>
                                 </ul>
+                            </li> -->
+                            {{-- Link --}}
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link scrollto">About Us</a>
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Service</a>
+                                <a href="#service" class="nav-link scrollto">Services</a>
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
