@@ -26,13 +26,13 @@
 {{-- Slick Carousel --}}
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 {{-- Ionic Icon Css --}}
-<link rel="stylesheet" href="plugins/Ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="/plugins/app/Ionicons/css/ionicons.min.css">
 {{-- animate.css --}}
-<link rel="stylesheet" href="plugins/animate-css/animate.css">
+<link rel="stylesheet" href="/plugins/app/animate-css/animate.css">
 
 {{-- Main Stylesheet --}}
-<link rel="stylesheet" href="/css/style.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
+<link rel="stylesheet" href="/css/app/style.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
 {{-- Preloader --}}
-<link rel="stylesheet" href="/css/preloader.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
+<link rel="stylesheet" href="/css/app/preloader.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
 
 

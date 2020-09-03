@@ -19,10 +19,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 {{-- filter --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
-<script src="plugins/SyoTimer/jquery.syotimer.min.js"></script>
+<script src="/plugins/app/SyoTimer/jquery.syotimer.min.js"></script>
 
 {{-- Start of HubSpot Embed Code --}}
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8391848.js"></script>
 {{-- End of HubSpot Embed Code --}}
 
-<script src="js/script.js?v={{ strtotime(\Carbon\Carbon::now()) }}"></script>
+<script src="/js/app/script.js?v={{ strtotime(\Carbon\Carbon::now()) }}"></script>
