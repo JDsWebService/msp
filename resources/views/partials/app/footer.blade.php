@@ -19,6 +19,9 @@
                     @guest
                         <a href="{{ route('login') }}">Webmaster Login</a>
                     @endguest
+                    @auth
+                        <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                    @endauth
                 </p>
             </div>
         </div>
