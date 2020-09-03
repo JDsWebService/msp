@@ -8,7 +8,7 @@
                         <h2>About Us</h2>
                         <p>Maine Sky Pixels Aerial Photography services uses the latest technology in aerial drones to provide photography and video services in Maine.</p>
                     </div>
-                    <p>Providing safe and affordable aerial photography to businesses and individuals is our mission Maine Sky Pixels is fully insured with industry standard Aerial Photography $2 million coverage, verification available upon request.  All our Pilots are FAA Licensed sUAS Pilots who follow all FAA guidelines and best practices. Whether you need epic photos and videos of properties for real estate or just want a epic shot to post on Instagram, Maine Sky Pixels can help. To learn more fill out our contact request now to get a personalized quote.</p>
+                    <p>Providing safe and affordable aerial photography to businesses and individuals is our mission. Maine Sky Pixels is fully insured with industry standard Aerial Photography $2 million coverage, verification available upon request. All our Pilots are FAA Licensed sUAS Pilots who follow all FAA guidelines and best practices. Whether you need epic photos and videos of properties for real estate or just want a epic shot to post on Instagram, Maine Sky Pixels can help. To learn more fill out our contact request now to get a personalized quote.</p>
                 </div>
             </div>
             <!-- .col-lg-7 close -->
