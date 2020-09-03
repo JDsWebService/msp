@@ -30,4 +30,7 @@ Route::prefix('contact')->name('contact.')->group(function () {
 	// });
 });
 
+// Test Route For New Layouts
+Route::get('/testing', 'PagesController@testing')->name('testing');
+
 Route::get('/', 'PagesController@index')->name('index');
