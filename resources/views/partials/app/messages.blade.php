@@ -1,7 +1,6 @@
-
 {{-- Primary Alert --}}
 @if(Session::has('primary'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_primary">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -20,7 +19,7 @@
 
 {{-- Secondary Alert --}}
 @if(Session::has('secondary'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_secondary">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -39,7 +38,7 @@
 
 {{-- Success Alert --}}
 @if(Session::has('success'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_success">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -58,7 +57,7 @@
 
 {{-- Danger Alert --}}
 @if(Session::has('danger'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_danger">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -77,7 +76,7 @@
 
 {{-- Warning Alert --}}
 @if(Session::has('warning'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_warning">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -98,7 +97,7 @@
 
 {{-- Informational Alert --}}
 @if(Session::has('info'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_info">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -117,7 +116,7 @@
 
 {{-- Light Alert --}}
 @if(Session::has('light'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_light">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -136,7 +135,7 @@
 
 {{-- Dark Alert --}}
 @if(Session::has('dark'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_dark">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -155,7 +154,7 @@
 
 {{-- Authentication Alerts --}}
 @if(Session::has('status'))
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_status">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -174,7 +173,7 @@
 
 {{-- If the page has any errors passed to it --}}
 @if(count($errors) > 0)
-<section class="section-alert section-xs" id="faq">
+<section class="section-alert section-xs" id="alert_msg_error">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">

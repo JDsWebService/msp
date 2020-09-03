@@ -1,25 +1,28 @@
-	<title>Login V15</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+{{-- ========== Meta Data ==========--}}
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Maine Sky Pixels - FAA Licensed Drone Operations">
+<meta name="author" content="jdswebservice.com">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{-- CSRF Token --}}
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+{{-- Website Title --}}
+<title>Maine Sky Pixels - Admin @yield('title')</title>
+
+{{-- Favicon --}}
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+{{--****************
+    Dependancies
+****************--}}
+
+{{-- Bootstrap 4 CSS --}}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/css/auth/util.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
+<link rel="stylesheet" type="text/css" href="/css/auth/main.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
+{{-- Preloader --}}
+<link rel="stylesheet" href="/css/app/preloader.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
+

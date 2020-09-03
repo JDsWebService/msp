@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => false, 'logout' => false, 'confirm' => false]);
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::prefix('admin')->name('admin.')->group(function () {
 	// Admin Dashboard
