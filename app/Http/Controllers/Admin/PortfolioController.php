@@ -61,7 +61,7 @@ class PortfolioController extends Controller
             'width' => 'nullable|integer',
             'height' => 'nullable|integer',
             'taken_on' => 'nullable|date',
-            'fileUpload' => 'required|image|max:1999'
+            'fileUpload' => 'required|image|max:49999'
         ]);
 
 
@@ -135,7 +135,7 @@ class PortfolioController extends Controller
             'width' => 'nullable|integer',
             'height' => 'nullable|integer',
             'taken_on' => 'nullable|date',
-            'fileUpload' => 'nullable|image|max:1999'
+            'fileUpload' => 'nullable|image|max:49999'
         ]);
 
 
