@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdatePortfolioTableToIncludeCategoryIdField extends Migration
+class UpdatePortfolioTableToAddForeignKeys extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,10 @@ class UpdatePortfolioTableToIncludeCategoryIdField extends Migration
     public function up()
     {
         Schema::table('portfolio', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('SET NULL');
         });
     }
 
@@ -26,7 +29,7 @@ class UpdatePortfolioTableToIncludeCategoryIdField extends Migration
     public function down()
     {
         Schema::table('portfolio', function (Blueprint $table) {
-            $table->dropColumn('category_id');
+            $table->dropForeign('portfolio_category_id_foreign');
         });
     }
 }
