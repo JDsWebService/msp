@@ -98,7 +98,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate Request
+        $this->validate($request, [
+            'name' => 'required|max:255|string'
+        ]);
+
+        // Create New Category Object
+        $category = Category::where('id', $id)->first();
+
+        // Assign Request Data To Object
+        $category->name = Purifier::clean($request->name);
+
+        // Save Object To Database
+        $category->save();
+
+        // Flash Session Message
+        Session::flash('success', 'Category has been successfully saved to the database');
+
+        // Return a redirect
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -109,6 +127,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Grab the category from the database
+        $category = Category::where('id', $id)->first();
+
+        $category->delete();
+
+        Session::flash('success', 'Category has been deleted.');
+        return redirect()->route('admin.category.index');
     }
 }

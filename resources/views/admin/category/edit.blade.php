@@ -7,7 +7,7 @@
     <div class="row">
 
         <div class="col-sm-12">
-            {{ Form::model($category, ['route' => 'admin.category.store', 'method' => 'PUT']) }}
+            {{ Form::model($category, ['route' => ['admin.category.update', $category->id], 'method' => 'PUT']) }}
             <label for="name">Category Name</label>
             {{ Form::text('name', null, ['class' => 'form-control form-control-lg', 'placeholder' => 'Category Name', 'required']) }}
 

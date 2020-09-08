@@ -25,6 +25,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Created At</th>
+                <th scope="col">Updated At</th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -34,6 +35,7 @@
                     <th scope="row">{{ $category->id }}</th>
                     <td>{!! $category->name !!}</td>
                     <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($category->created_at))->diffForHumans() }}</td>
+                    <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($category->updated_at))->diffForHumans() }}</td>
                     <td>
                         <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-secondary btn-sm">
                             <i class="far fa-edit"></i> Edit
