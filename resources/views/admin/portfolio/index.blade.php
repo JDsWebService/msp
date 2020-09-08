@@ -24,8 +24,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
-                <th scope="col">Width</th>
-                <th scope="col">Height</th>
+                <th scope="col">Resolution W/H</th>
+                <th scope="col">Category</th>
                 <th scope="col">Created At</th>
                 <th scope="col"></th>
             </tr>
@@ -35,8 +35,13 @@
                 <tr>
                     <th scope="row">{{ $image->id }}</th>
                     <td>{!! $image->title !!}</td>
-                    <td>{{ $image->width }}</td>
-                    <td>{{ $image->height }}</td>
+                    <td>{{ $image->width }} x {{ $image->height }}</td>
+                    <td>
+                        @if(isset($image->category))
+                            {{ $image->category->name }}
+                        @else
+                            <span class="text-warning">No Category Set</span>
+                        @endif</td>
                     <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($image->created_at))->diffForHumans() }}</td>
                     <td>
                         <a href="{{ route('admin.portfolio.edit', $image->id) }}" class="btn btn-secondary btn-sm">

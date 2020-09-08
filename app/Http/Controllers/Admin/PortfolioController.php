@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Handlers\FileHandler;
 use App\Http\Controllers\Controller;
+use App\Models\Portfolio\Category;
 use App\Models\Portfolio\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -31,8 +32,19 @@ class PortfolioController extends Controller
      */
     public function create()
     {
+        // Grab All Categories & Store In Array
+        $categories = Category::orderBy('name', 'desc')->get();
+        $categoriesArray = [];
+        foreach($categories as $category) {
+            $id = $category->id;
+            $name = $category->name;
+            $categoriesArray[$id] = $name;
+        }
+
         // Return the Create View
-        return view('admin.portfolio.create');
+        return view('admin.portfolio.create')
+            ->withCategories($categories)
+            ->withCategoriesArray($categoriesArray);
     }
 
     /**
@@ -72,6 +84,7 @@ class PortfolioController extends Controller
         $image->taken_on = $request->taken_on;
         $image->width = $request->width;
         $image->height = $request->height;
+        $image->category_id = $request->category_id;
 
         // Save Object
         $image->save();
@@ -92,8 +105,19 @@ class PortfolioController extends Controller
     {
         // Grab the image from the database
         $image = Image::where('id', $id)->first();
+        // Grab All Categories & Store In Array
+        $categories = Category::orderBy('name', 'desc')->get();
+        $categoriesArray = [];
+        foreach($categories as $category) {
+            $id = $category->id;
+            $name = $category->name;
+            $categoriesArray[$id] = $name;
+        }
 
-        return view('admin.portfolio.edit')->withImage($image);
+        return view('admin.portfolio.edit')
+            ->withCategories($categories)
+            ->withCategoriesArray($categoriesArray)
+            ->withImage($image);
     }
 
     /**
@@ -135,6 +159,7 @@ class PortfolioController extends Controller
         $image->taken_on = $request->taken_on;
         $image->width = $request->width;
         $image->height = $request->height;
+        $image->category_id = $request->category_id;
 
         // Save Object
         $image->save();
