@@ -19,6 +19,8 @@ Auth::routes(['register' => false, 'logout' => false, 'confirm' => false]);
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::prefix('admin')->name('admin.')->group(function () {
+    // Admin Portfolio
+    Route::resource('portfolio', 'Admin\PortfolioController')->except('show');
 	// Admin Dashboard
 	Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
 });

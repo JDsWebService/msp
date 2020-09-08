@@ -69,7 +69,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('admin.portfolio.create') }}">
                                     <i class="far fa-plus-square"></i> Add New Image
                                 </a>
                             </li>

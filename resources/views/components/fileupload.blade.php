@@ -18,7 +18,7 @@
         z-index: 10;
     }
 </style>
-<label for="fileUpload" class="mt-3">Resource Image</label>
+<label for="fileUpload" class="mt-3">File Upload</label>
 <div class="form-group">
     <input type="file" id="fileUpload" name="fileUpload">
     <p id="fileUploadPTag">Drag your files here or click in this area.</p>
