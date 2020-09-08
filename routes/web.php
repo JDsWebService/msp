@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['register' => false, 'logout' => false, 'confirm' => false]);
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
+// Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
-    // Admin Portfolio
+    // Portfolio
     Route::resource('portfolio', 'Admin\PortfolioController')->except('show');
-	// Admin Dashboard
+    // Categories
+    Route::resource('category', 'Admin\CategoryController')->except('show');
+	// Dashboard
 	Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
 });
 
