@@ -57,7 +57,7 @@
                 {{-- Dropdown --}}
                 <li class="sidebar-dropdown">
                     <a href="#">
-                        <i class="fas fa-server"></i>
+                        <i class="far fa-images"></i>
                         <span>Portfolio</span>
                         {{-- <span class="badge badge-pill badge-primary">3</span> --}}
                     </a>
