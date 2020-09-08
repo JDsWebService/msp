@@ -77,6 +77,29 @@
                     </div>
                 </li>
 
+                {{-- Dropdown --}}
+                <li class="sidebar-dropdown">
+                    <a href="#">
+                        <i class="far fa-folder-open"></i>
+                        <span>Category</span>
+                        {{-- <span class="badge badge-pill badge-primary">3</span> --}}
+                    </a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li>
+                                <a href="{{ route('admin.category.index') }}">
+                                    <i class="far fa-eye"></i> View All Categories
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.category.create') }}">
+                                    <i class="far fa-plus-square"></i> Add New Category
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 {{-- Header --}}
                 <li class="header-menu">
                     <span>Sidebar Header</span>
