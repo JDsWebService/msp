@@ -45,7 +45,7 @@
                         <button class="btn btn-danger btn-sm" form="deleteImageForm{{ $image->id }}">
                             <i class="far fa-trash-alt"></i> Delete
                         </button>
-                        {{ Form::open(['route' => ['admin.portfolio.destroy', $image->id], 'id' => 'deleteImageForm' . $image->id ])}}
+                        {{ Form::open(['route' => ['admin.portfolio.destroy', $image->id], 'id' => 'deleteImageForm' . $image->id, 'method' => 'DELETE'])}}
                         {{ Form::close() }}
                     </td>
                 </tr>

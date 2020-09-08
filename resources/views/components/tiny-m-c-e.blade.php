@@ -1,5 +1,4 @@
-<textarea name="{{ $name }}" placeholder="Start writing the next great story...">
-</textarea>
+{{ Form::textarea($name, null, ['placeholder' => 'Start writing the next great story...']) }}
 <script src="https://cdn.tiny.cloud/1/iiymszi5ey6bty2irx4oyirzn9uugi59vj1010ne9h3wjvar/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 	tinymce.init({

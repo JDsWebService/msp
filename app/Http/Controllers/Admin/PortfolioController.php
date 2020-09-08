@@ -101,7 +101,10 @@ class PortfolioController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Grab the image from the database
+        $image = Image::where('id', $id)->first();
+
+        return view('admin.portfolio.edit')->withImage($image);
     }
 
     /**
@@ -113,7 +116,44 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|max:255|string',
+            'description' => 'nullable|max:65535|string',
+            'width' => 'nullable|integer',
+            'height' => 'nullable|integer',
+            'taken_on' => 'nullable|date',
+            'fileUpload' => 'nullable|image|max:1999'
+        ]);
+
+
+        // Create the object
+        $image = Image::where('id', $id)->first();
+
+        // Handle File Upload
+        if($request->fileUpload != null) {
+            $file = FileHandler::replaceFile($image, $request, 'portfolio');
+            $image->fileNameWithExt = $file->fileNameWithExt;
+            $image->fileName = $file->fileName;
+            $image->extension = $file->extension;
+            $image->fileNameToStore = $file->fileNameToStore;
+            $image->fullPath = $file->fullPath;
+            $image->publicPath = $file->publicPath;
+        }
+
+        // Add Meta Data to object
+        $image->title = Purifier::clean($request->title);
+        $image->description = Purifier::clean($request->description);
+        $image->taken_on = $request->taken_on;
+        $image->width = $request->width;
+        $image->height = $request->height;
+
+        // Save Object
+        $image->save();
+
+        // Flash Message
+        Session::flash('success', 'Portfolio Image has been updated in the database!');
+        // Redirect
+        return redirect()->route('admin.portfolio.index');
     }
 
     /**
@@ -124,6 +164,14 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ingredient = Image::where('id', $id)->first();
+        $fileDelete = FileHandler::deleteFile($ingredient);
+
+        if($fileDelete) {
+            $ingredient->delete();
+        }
+
+        Session::flash('success', 'Image has been deleted.');
+        return redirect()->route('admin.portfolio.index');
     }
 }

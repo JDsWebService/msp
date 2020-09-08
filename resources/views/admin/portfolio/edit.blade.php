@@ -7,7 +7,7 @@
     <div class="row">
 
         <div class="col-sm-12">
-            {{ Form::open(['route' => 'admin.portfolio.store', 'files' => true]) }}
+            {{ Form::model($image, ['route' => ['admin.portfolio.update', $image->id], 'files' => true, 'method' => 'PUT']) }}
             <label for="title">Image Title</label>
             {{ Form::text('title', null, ['class' => 'form-control form-control-lg', 'placeholder' => 'Image Title', 'required']) }}
 
@@ -31,7 +31,7 @@
             </div>
             @include('components.fileupload')
 
-            <button type="submit" class="btn btn-success mt-4 btn-block"><i class="far fa-plus-square"></i> Add Image</button>
+            <button type="submit" class="btn btn-success mt-4 btn-block"><i class="far fa-save"></i> Save Changes</button>
             {{ Form::close() }}
         </div>
 
