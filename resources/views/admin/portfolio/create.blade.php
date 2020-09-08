@@ -29,7 +29,6 @@
                     <x-tiny-m-c-e name="description"/>
                 </div>
             </div>
-
             @include('components.fileupload')
 
             <button type="submit" class="btn btn-success mt-4 btn-block"><i class="far fa-plus-square"></i> Add Ingredient</button>

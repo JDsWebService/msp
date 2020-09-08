@@ -18,7 +18,10 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        // Grab Images From Database
+        $images = Image::orderBy('created_at', 'desc')->paginate(15);
+
+        return view('admin.portfolio.index')->withImages($images);
     }
 
     /**
@@ -76,7 +79,7 @@ class PortfolioController extends Controller
         // Flash Message
         Session::flash('success', 'Portfolio Image has been added to the database!');
         // Redirect
-        return redirect()->route('admin.portfolio.create');
+        return redirect()->route('admin.portfolio.index');
     }
 
     /**
