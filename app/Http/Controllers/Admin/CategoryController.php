@@ -15,7 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        // Grab all the categories from the database
+        $categories = Category::orderBy('name', 'desc')->paginate(15);
+
+        return view('admin.category.index')->withCategories($categories);
     }
 
     /**
