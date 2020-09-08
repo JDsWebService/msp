@@ -64,7 +64,7 @@
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('admin.portfolio.index') }}">
                                     <i class="far fa-eye"></i> View All Images
                                 </a>
                             </li>
