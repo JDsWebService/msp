@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Mews\Purifier\Facades\Purifier;
 
 class CategoryController extends Controller
 {
