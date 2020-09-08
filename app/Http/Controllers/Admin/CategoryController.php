@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Portfolio\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -36,7 +37,25 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate Request
+        $this->validate($request, [
+            'name' => 'required|max:255|string'
+        ]);
+
+        // Create New Category Object
+        $category = new Category;
+
+        // Assign Request Data To Object
+        $category->name = Purifier::clean($request->name);
+
+        // Save Object To Database
+        $category->save();
+
+        // Flash Session Message
+        Session::flash('success', 'Category has been successfully added to the database');
+
+        // Return a redirect
+        return redirect()->route('admin.category.index');
     }
 
     /**
