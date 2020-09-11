@@ -13,7 +13,7 @@ class ContactController extends Controller
 {
     // Send eMail Method
     public function sendemail(Request $request) {
-
+        dd(env('GOOGLE_RECAPTCHA_SECRET'));
     	$this->validate($request, [
     		'name' => 'required|string|max:255',
     		'email' => 'required|email|max:255',
