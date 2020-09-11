@@ -13,7 +13,7 @@ class ContactController extends Controller
 {
     // Send eMail Method
     public function sendemail(Request $request) {
-        dd(config('google.recaptcha.secret'));
+
     	$this->validate($request, [
     		'name' => 'required|string|max:255',
     		'email' => 'required|email|max:255',
@@ -28,7 +28,7 @@ class ContactController extends Controller
         $g_token = $request->input('g-recaptcha-response');
         if(isset($g_token)) {
             $guzzle = new Guzzle();
-            $url = "https://www.google.com/recaptcha/api/siteverify";
+            $url = config('google.recaptcha.url');
             $recaptcha_data = [
                 'secret'    => env('GOOGLE_RECAPTCHA_SECRET'),
                 'response'  => $g_token
