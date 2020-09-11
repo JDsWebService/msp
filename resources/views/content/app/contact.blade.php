@@ -9,7 +9,7 @@
             	</p>
             </div>
             <div class="col-sm-8">
-            	{{ Form::open(['route' => 'contact.sendemail', 'method' => 'POST']) }}
+            	{{ Form::open(['route' => 'contact.sendemail', 'method' => 'POST', 'id' => 'contactForm']) }}
 	            	<div class="row">
 	            		<div class="col-sm-6">
 	            			<input type="text" name="name" class="form-control" placeholder="Full Name *">
@@ -25,10 +25,16 @@
 	            			<input type="text" name="location" class="form-control mt-3" placeholder="123 Main St. Bangor ME 04401">
 	            		</div>
 	            	</div>
-            		
-            		
+
+
             		<span class="text-danger" style="font-size: 8pt;">* Required</span>
-            		<button type="submit" class="btn btn-block btn-success mt-3"><i class="far fa-paper-plane"></i> Send Contact Request</button>
+            		<button type="submit"
+                            class="btn btn-block btn-success mt-3 g-recaptcha"
+                            data-sitekey="6LcG38oZAAAAAB385Q38RvZ1MvyVzZGspAPkYmHK"
+                            data-callback='onSubmit'
+                            data-action='submit'>
+                        <i class="far fa-paper-plane"></i> Send Contact Request
+                    </button>
             	{{ Form::close() }}
             </div>
         </div>

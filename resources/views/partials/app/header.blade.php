@@ -14,7 +14,7 @@
 {{-- Favicon --}}
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-{{--**************** 
+{{--****************
     Dependancies
 ****************--}}
 
@@ -28,6 +28,8 @@
 <link rel="stylesheet" href="/plugins/app/Ionicons/css/ionicons.min.css">
 {{-- animate.css --}}
 <link rel="stylesheet" href="/plugins/app/animate-css/animate.css">
+{{-- Google ReCAPTCHA --}}
+<script src="https://www.google.com/recaptcha/api.js"></script>
 
 {{-- Main Stylesheet --}}
 <link rel="stylesheet" href="/css/app/style.css?v={{ strtotime(\Carbon\Carbon::now()) }}">

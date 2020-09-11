@@ -20,5 +20,12 @@
 {{-- filter --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
 <script src="/plugins/app/SyoTimer/jquery.syotimer.min.js"></script>
+{{-- Google ReCAPTCHA --}}
+<script>
+    function onSubmit(token) {
+        document.getElementById("contactForm").submit();
+    }
+</script>
 
+{{-- Main Javascript File --}}
 <script src="/js/app/script.js?v={{ strtotime(\Carbon\Carbon::now()) }}"></script>
