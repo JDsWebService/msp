@@ -30,7 +30,7 @@ class ContactController extends Controller
             $guzzle = new Guzzle();
             $url = config('google.recaptcha.url');
             $recaptcha_data = [
-                'secret'    => env('GOOGLE_RECAPTCHA_SECRET'),
+                'secret'    => config('google.recaptcha.secret'),
                 'response'  => $g_token
             ];
             $form_params = ['form_params' => $recaptcha_data];
