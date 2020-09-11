@@ -19,9 +19,6 @@
                             Developed by <a href="http://jdswebservice.com/" target="_blank">JD's Web Service</a>
                             <span class="text-muted">#1319099</span>
                             <br>
-                            @guest
-                                <a href="{{ route('login') }}">Webmaster Login</a>
-                            @endguest
                             @auth
                                 <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
                             @endauth
