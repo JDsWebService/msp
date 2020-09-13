@@ -37,8 +37,8 @@ Route::prefix('contact')->name('contact.')->group(function () {
 });
 
 // Test Route For New Layouts
-Route::get('/testing', 'PagesController@testing')->middleware('auth')->name('testing');
+// Route::get('/testing', 'PagesController@testing')->middleware('auth')->name('testing');
 // Generate New QR Code for Google Authenticator App
-Route::get('/barcode', 'PagesController@googleGenerate')->name('barcode');
+// Route::get('/barcode', 'PagesController@googleGenerate')->name('barcode');
 
 Route::get('/', 'PagesController@index')->name('index');
