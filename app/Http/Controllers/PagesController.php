@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Sonata\GoogleAuthenticator\GoogleQrUrl;
 
 class PagesController extends Controller
 {
@@ -23,5 +25,15 @@ class PagesController extends Controller
     	}
 
     	return view('auth.login');
+    }
+
+    // Generate a New Google 2FA Code
+    public function googleGenerate() {
+        $secret = LoginController::getGoogleSecretCode();
+
+        $barcode = GoogleQrUrl::generate('admin', $secret, 'MaineSkyPixels');
+
+        return view('admin.2facode')
+            ->withBarcode($barcode);
     }
 }

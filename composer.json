@@ -16,7 +16,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
         "laravelcollective/html": "^6.1",
-        "mews/purifier": "^3.2"
+        "mews/purifier": "^3.2",
+        "sonata-project/google-authenticator": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

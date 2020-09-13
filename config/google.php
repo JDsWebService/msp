@@ -18,6 +18,11 @@ return [
     'recaptcha' => [
         'url' => 'https://www.google.com/recaptcha/api/siteverify',
         'secret' => env('GOOGLE_RECAPTCHA_SECRET')
+    ],
+
+    // Google 2FA Secret Code
+    '2fa' => [
+        'secret' => env('GOOGLE_2FA_SECRET'),
     ]
 
 ];
