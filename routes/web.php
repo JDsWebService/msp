@@ -36,6 +36,12 @@ Route::prefix('contact')->name('contact.')->group(function () {
 	// });
 });
 
+// Portfolio Routes
+Route::prefix('portfolio')->name('portfolio.')->group(function () {
+    // Index
+    Route::get('/', 'PortfolioController@index')->name('index');
+});
+
 // Test Route For New Layouts
 // Route::get('/testing', 'PagesController@testing')->middleware('auth')->name('testing');
 // Generate New QR Code for Google Authenticator App
