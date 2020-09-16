@@ -47,7 +47,7 @@
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
-                                <a href="{{ route('portfolio.index') }}" class="nav-link">Portfolio'</a>
+                                <a href="{{ route('portfolio.index') }}" class="nav-link">Portfolio</a>
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
