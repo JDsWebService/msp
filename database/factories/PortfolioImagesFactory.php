@@ -5,6 +5,7 @@
 use App\Model;
 use App\Models\Portfolio\Category;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(App\Models\Portfolio\Image::class, function (Faker $faker) {
     // ---------------------
@@ -32,7 +33,8 @@ $factory->define(App\Models\Portfolio\Image::class, function (Faker $faker) {
     $fileNameWithExt = $fileName . '.' . $extension;
     $testPath = $faker->imageUrl(500, 500, 'cats', true, 'Maine Sky Pixels');
     $category = Category::inRandomOrder()->first();
-
+    $title = $faker->words(3, true);
+    $slug = Str::slug($title);
     return [
         // File/Image Columns
         'fileNameWithExt' => $fileNameWithExt,
@@ -41,7 +43,8 @@ $factory->define(App\Models\Portfolio\Image::class, function (Faker $faker) {
         'fileNameToStore' => $fileNameWithExt,
         'fullPath' => $testPath,
         'publicPath' => $testPath,
-        'title' => $faker->words(3, true),
+        'title' => $title,
+        'slug' => $slug,
         'width' => $faker->randomNumber(5),
         'height' => $faker->randomNumber(5),
         'taken_on' => $faker->dateTime(),
