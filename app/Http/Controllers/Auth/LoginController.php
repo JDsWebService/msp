@@ -57,16 +57,21 @@ class LoginController extends Controller
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required|min:6',
-            'google_code' => 'required|string'
         ]);
 
-        // Handle the 2FA
-        $g = new GoogleAuthenticator();
-        $secret = self::getGoogleSecretCode();
+        // Check if the environment is in production
+        if(config('app.env') != 'local') {
+            $this->validate($request, [
+                'google_code' => 'required|string',
+            ]);
+            // Handle the 2FA
+            $g = new GoogleAuthenticator();
+            $secret = self::getGoogleSecretCode();
 
-        if(!$g->checkCode($secret, $request->google_code)) {
-            Session::flash('danger', 'Two Factor Authentication Code is Invalid');
-            return redirect()->route('login');
+            if(!$g->checkCode($secret, $request->google_code)) {
+                Session::flash('danger', 'Two Factor Authentication Code is Invalid');
+                return redirect()->route('login');
+            }
         }
 
         $credentials = [
