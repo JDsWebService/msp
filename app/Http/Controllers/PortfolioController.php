@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\PortfolioHandler;
 use App\Models\Portfolio\Category;
 use App\Models\Portfolio\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PortfolioController extends Controller
 {
@@ -17,6 +19,16 @@ class PortfolioController extends Controller
     {
         $categories = Category::orderBy('name', 'desc')->get();
         $images = Image::orderBy('updated_at', 'desc')->paginate(18);
+
+        if(!PortfolioHandler::doCategoriesExist($categories)) {
+            Session::flash('Oops, we don\'t have anything to show you yet! Check back later!');
+            return redirect()->route('index');
+        }
+
+        if(!PortfolioHandler::doImagesExist($images)) {
+            Session::flash('Oops, we don\'t have any images to show you yet! Check back later!');
+            return redirect()->route('index');
+        }
 
         // Return the Index of the Portfolio Section
         return view('portfolio.index')->withCategories($categories)->withImages($images);

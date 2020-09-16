@@ -28,8 +28,16 @@ class PortfolioHandler extends Controller
     }
 
     // Do the categories exist
-    protected static function doCategoriesExist($categories) {
+    public static function doCategoriesExist($categories) {
         if($categories->count() == 0) {
+            return false;
+        }
+        return true;
+    }
+
+    // Do the images exist
+    public static function doImagesExist($images) {
+        if($images->count() == 0) {
             return false;
         }
         return true;
