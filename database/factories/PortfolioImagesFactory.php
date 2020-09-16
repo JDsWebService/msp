@@ -35,7 +35,7 @@ $factory->define(App\Models\Portfolio\Image::class, function (Faker $faker) {
     $testPath = $faker->imageUrl(500, 500, 'cats', true, 'Maine Sky Pixels');
     $category = Category::inRandomOrder()->first();
     $title = $faker->words(3, true);
-    $slug = Str::slug($title) . strtotime(Carbon::now());
+    $slug = Str::slug($title) . '-' . $faker->unixTime();
     return [
         // File/Image Columns
         'fileNameWithExt' => $fileNameWithExt,
