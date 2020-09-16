@@ -82,7 +82,7 @@ class PortfolioController extends Controller
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
-        $slug = Str::slug($title) . Carbon::now();
+        $slug = Str::slug($title) . strtotime(Carbon::now());
 
         // Add Meta Data to object
         $image->title = $title;
@@ -162,7 +162,7 @@ class PortfolioController extends Controller
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
-        $slug = Str::slug($title) . Carbon::now();
+        $slug = Str::slug($title) . strtotime(Carbon::now());
 
         // Add Meta Data to object
         $image->title = $title;
