@@ -40,7 +40,7 @@
                         <div class="row shuffle-wrapper">
                             @foreach($images as $image)
                                 <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;{{ $image->category->name }}&quot;]">
-                                    <img src="{{ $image->fullPath }}" class="img-fluid" alt="">
+                                    <img src="{{ $image->publicPath }}" class="img-fluid" alt="">
                                     <div class="portfolio-hover">
                                         <div class="portfolio-content">
                                             <a class="h3" href="{{ route('portfolio.show', $image->slug) }}">{{ $image->title }}</a>

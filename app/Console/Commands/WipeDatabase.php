@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\DB;
 
 class WipeDatabase extends Command
@@ -48,9 +49,11 @@ class WipeDatabase extends Command
 
         if($this->confirm('Do you wish to continue?')) {
             // Delete the entries in the Portfolio Images Table
-            $this->deletePortfolioImages();
+            $this->deletePortfolioEntries();
             // Delete the entries in Categories Table
             $this->deleteCategoriesEntries();
+            // Wipe Portfolio Images Directory
+            $this->wipePortfolioImagesDirectory();
             // Show Completion Message
             $this->info('Command has been successfully executed!');
         } else {
@@ -60,17 +63,25 @@ class WipeDatabase extends Command
 
     }
 
-    // Delete the Portfolio Images from the `portfolios` table
-    protected function deletePortfolioImages() {
-        $this->comment('Deleting categories table!');
+    // Delete the Portfolio entries from the `portfolios` table
+    protected function deletePortfolioEntries() {
+        $this->comment('Deleting entries in portfolio table!');
         DB::table('portfolio')->delete();
-        $this->info('Categories table deleted');
+        $this->info('Entries in portfolio table have been deleted');
     }
 
-    // Delete the Portfolio Categories from the `categories` table
+    // Delete the Portfolio Category entries from the `categories` table
     protected function deleteCategoriesEntries() {
-        $this->comment('Deleting categories table!');
+        $this->comment('Deleting entries in categories table!');
         DB::table('categories')->delete();
-        $this->info('Categories table deleted');
+        $this->info('Entries in categories table have been deleted');
+    }
+
+    // Wipe the storage directory clean
+    protected function wipePortfolioImagesDirectory() {
+        $this->comment('Wiping portfolio images directory!');
+        $file = new Filesystem;
+        $file->cleanDirectory('storage/app/public/portfolio');
+        $this->info('Portfolio Images Directory has been wiped');
     }
 }

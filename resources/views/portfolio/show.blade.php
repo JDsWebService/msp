@@ -8,8 +8,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-center">
-                    <a href="{{ $image->fullPath }}" target="_blank">
-                        <img src="{{ $image->fullPath }}" class="portfolio-single-image" alt="{!! $image->title !!}">
+                    <a href="{{ $image->publicPath }}" target="_blank">
+                        <img src="{{ $image->publicPath }}" class="portfolio-single-image" alt="{!! $image->title !!}">
                     </a>
                 </div>
                 <div class="col-md-4">
@@ -32,7 +32,7 @@
                             </li>
                             <li><span><i class="fas fa-th-list"></i> Category </span> {{ $image->category->name }}</li>
                             <li>
-                                <a href="{{ $image->fullPath }}"><i class="far fa-eye"></i> View Full Image</a>
+                                <a href="{{ $image->publicPath }}" target="_blank"><i class="far fa-eye"></i> View Full Image</a>
                             </li>
                         </ul>
                     </div>
