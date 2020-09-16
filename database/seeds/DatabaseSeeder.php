@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserSeeder::class);
         // Run the Portfolio Categories Seeder
         $this->call(CategoriesSeeder::class);
+        $this->call(PortfolioImagesSeeder::class);
     }
 }
