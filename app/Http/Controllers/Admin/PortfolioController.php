@@ -6,6 +6,7 @@ use App\Handlers\FileHandler;
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio\Category;
 use App\Models\Portfolio\Image;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
@@ -81,7 +82,7 @@ class PortfolioController extends Controller
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
-        $slug = Str::slug($title);
+        $slug = Str::slug($title) . Carbon::now();
 
         // Add Meta Data to object
         $image->title = $title;
@@ -161,7 +162,7 @@ class PortfolioController extends Controller
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
-        $slug = Str::slug($title);
+        $slug = Str::slug($title) . Carbon::now();
 
         // Add Meta Data to object
         $image->title = $title;

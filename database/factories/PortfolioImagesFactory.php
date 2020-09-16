@@ -4,6 +4,7 @@
 
 use App\Model;
 use App\Models\Portfolio\Category;
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -34,7 +35,7 @@ $factory->define(App\Models\Portfolio\Image::class, function (Faker $faker) {
     $testPath = $faker->imageUrl(500, 500, 'cats', true, 'Maine Sky Pixels');
     $category = Category::inRandomOrder()->first();
     $title = $faker->words(3, true);
-    $slug = Str::slug($title);
+    $slug = Str::slug($title) . Carbon::now();
     return [
         // File/Image Columns
         'fileNameWithExt' => $fileNameWithExt,

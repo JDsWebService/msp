@@ -40,6 +40,8 @@ Route::prefix('contact')->name('contact.')->group(function () {
 Route::prefix('portfolio')->name('portfolio.')->group(function () {
     // Index
     Route::get('/', 'PortfolioController@index')->name('index');
+    // Show Singular Image
+    Route::get('/{slug}', 'PortfolioController@show')->name('show');
 });
 
 // Test Route For New Layouts
