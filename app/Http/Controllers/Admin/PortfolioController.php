@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Handlers\FileHandler;
+use App\Handlers\PortfolioHandler;
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio\Category;
 use App\Models\Portfolio\Image;
@@ -35,25 +36,17 @@ class PortfolioController extends Controller
     public function create()
     {
         // Grab All Categories & Store In Array
-        $categories = Category::orderBy('name', 'desc')->get();
+        $categories = PortfolioHandler::getCategories();
 
-        // If there are no categories redirect
-        if($categories->count() == 0) {
-            Session::flash('warning', 'No categories added yet. Create a category first before submitting a new image!');
+        // Return Redirect if no categories exist
+        if(!$categories) {
             return redirect()->route('admin.category.create');
-        }
-
-        $categoriesArray = [];
-        foreach($categories as $category) {
-            $id = $category->id;
-            $name = $category->name;
-            $categoriesArray[$id] = $name;
         }
 
         // Return the Create View
         return view('admin.portfolio.create')
-            ->withCategories($categories)
-            ->withCategoriesArray($categoriesArray);
+            //->withCategories($categories)
+            ->withCategories($categories);
     }
 
     /**
@@ -118,25 +111,20 @@ class PortfolioController extends Controller
      */
     public function edit($id)
     {
-        // Grab the image from the database
-        $image = Image::where('id', $id)->first();
         // Grab All Categories & Store In Array
-        $categories = Category::orderBy('name', 'desc')->get();
-        // If there are no categories redirect
-        if($categories->count() == 0) {
-            Session::flash('warning', 'No categories added yet. Create a category first before submitting a new image!');
+        $categories = PortfolioHandler::getCategories();
+
+        // Return Redirect if no categories exist
+        if(!$categories) {
             return redirect()->route('admin.category.create');
         }
-        $categoriesArray = [];
-        foreach($categories as $category) {
-            $id = $category->id;
-            $name = $category->name;
-            $categoriesArray[$id] = $name;
-        }
+
+        // Grab the image from the database
+        $image = Image::where('id', $id)->first();
 
         return view('admin.portfolio.edit')
+            //->withCategories($categories)
             ->withCategories($categories)
-            ->withCategoriesArray($categoriesArray)
             ->withImage($image);
     }
 
@@ -214,4 +202,5 @@ class PortfolioController extends Controller
         Session::flash('success', 'Image has been deleted.');
         return redirect()->route('admin.portfolio.index');
     }
+
 }

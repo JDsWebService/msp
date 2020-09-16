@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="category">Category</label>
-                    {{ Form::select('category_id', $categoriesArray, null, ['placeholder' => 'Select Category...', 'class' => 'form-control', 'required']) }}
+                    {{ Form::select('category_id', $categories, null, ['placeholder' => 'Select Category...', 'class' => 'form-control', 'required']) }}
                 </div>
                 <div class="col-sm-12 mt-3">
                     <label for="description">Image Description</label>
