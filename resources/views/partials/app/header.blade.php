@@ -35,5 +35,6 @@
 <link rel="stylesheet" href="/css/app/style.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
 {{-- Preloader --}}
 <link rel="stylesheet" href="/css/app/preloader.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
-
+{{-- Overrides --}}
+<link rel="stylesheet" href="/css/app/overrides.css?v={{ strtotime(\Carbon\Carbon::now()) }}">
 

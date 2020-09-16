@@ -1,0 +1,11 @@
+/* Portfolio Section */
+.portfolio-title {
+    font-weight: 100 !important;
+    text-transform: uppercase !important;
+    color: #b9b9b9 !important;
+}
+.portfolio-subtitle {
+    font-weight: 300 !important;
+    font-size: 18px !important;
+    color: #b9b9b9 !important;
+}
