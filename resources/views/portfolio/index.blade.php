@@ -29,78 +29,27 @@
                                 <label class="btn btn-sm btn-primary active">
                                     <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
                                 </label>
-                                <label class="btn btn-sm btn-primary">
-                                    <input type="radio" name="shuffle-filter" value="design" />UI/UX Design
-                                </label>
-                                <label class="btn btn-sm btn-primary">
-                                    <input type="radio" name="shuffle-filter" value="video" />Video
-                                </label>
-                                <label class="btn btn-sm btn-primary">
-                                    <input type="radio" name="shuffle-filter" value="illustration" />ILLUSTRATION
-                                </label>
+                                @foreach($categories as $category)
+                                    <label class="btn btn-sm btn-primary">
+                                        <input type="radio" name="shuffle-filter" value="{{ $category->name }}" />
+                                        {{ $category->name }}
+                                    </label>
+                                @endforeach
                             </div>
                         </div>
                         <div class="row shuffle-wrapper">
-                            <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;design&quot;]">
-                                <img src="images/portfolio/work1.jpg" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-content">
-                                        <a href="images/portfolio/work1.jpg" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                        <a class="h3" href="portfolio-single.html">Rio Furniture</a>
-                                        <p>Labore et dolore magna aliqua. Ut enim ad </p>
+                            @foreach($images as $image)
+                                <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;{{ $image->category->name }}&quot;]">
+                                    <img src="{{ $image->fullPath }}" class="img-fluid" alt="">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-content">
+                                            <a href="#" class="portfolio-popup"><i class="icon ion-search"></i></a>
+                                            <a class="h3" href="portfolio-single.html">{{ $image->title }}</a>
+                                            <p>{{ \Illuminate\Support\Str::words($image->description, 5, '...') }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
-                                <img src="images/portfolio/work2.jpg" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-content">
-                                        <a href="images/portfolio/work2.jpg" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                        <a class="h3" href="portfolio-single.html">Rio Furniture</a>
-                                        <p>Labore et dolore magna aliqua. Ut enim ad </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;illustration&quot;]">
-                                <img src="images/portfolio/work3.jpg" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-content">
-                                        <a href="images/portfolio/work3.jpg" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                        <a class="h3" href="portfolio-single.html">Rio Furniture</a>
-                                        <p>Labore et dolore magna aliqua. Ut enim ad </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;video&quot;,&quot;illustration&quot;]">
-                                <img src="images/portfolio/work4.jpg" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-content">
-                                        <a href="images/portfolio/work4.jpg" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                        <a class="h3" href="portfolio-single.html">Rio Furniture</a>
-                                        <p>Labore et dolore magna aliqua. Ut enim ad </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
-                                <img src="images/portfolio/work5.jpg" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-content">
-                                        <a href="images/portfolio/work5.jpg" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                        <a class="h3" href="portfolio-single.html">Rio Furniture</a>
-                                        <p>Labore et dolore magna aliqua. Ut enim ad </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;design&quot;,&quot;video&quot;]">
-                                <img src="images/portfolio/work6.jpg" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-content">
-                                        <a href="images/portfolio/work6.jpg" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                        <a class="h3" href="portfolio-single.html">Rio Furniture</a>
-                                        <p>Labore et dolore magna aliqua. Ut enim ad </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

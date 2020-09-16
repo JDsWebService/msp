@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio\Category;
+use App\Models\Portfolio\Image;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -13,8 +15,11 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $categories = Category::orderBy('name', 'desc')->get();
+        $images = Image::orderBy('updated_at', 'desc')->get();
+
         // Return the Index of the Portfolio Section
-        return view('portfolio.index');
+        return view('portfolio.index')->withCategories($categories)->withImages($images);
     }
 
     /**
