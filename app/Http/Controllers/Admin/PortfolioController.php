@@ -36,6 +36,13 @@ class PortfolioController extends Controller
     {
         // Grab All Categories & Store In Array
         $categories = Category::orderBy('name', 'desc')->get();
+
+        // If there are no categories redirect
+        if($categories->count() == 0) {
+            Session::flash('warning', 'No categories added yet. Create a category first before submitting a new image!');
+            return redirect()->route('admin.category.create');
+        }
+
         $categoriesArray = [];
         foreach($categories as $category) {
             $id = $category->id;
@@ -63,7 +70,8 @@ class PortfolioController extends Controller
             'width' => 'nullable|integer',
             'height' => 'nullable|integer',
             'taken_on' => 'nullable|date',
-            'fileUpload' => 'required|image|max:49999'
+            'fileUpload' => 'required|image|max:49999',
+            'category_id' => 'required'
         ]);
 
 
@@ -114,6 +122,11 @@ class PortfolioController extends Controller
         $image = Image::where('id', $id)->first();
         // Grab All Categories & Store In Array
         $categories = Category::orderBy('name', 'desc')->get();
+        // If there are no categories redirect
+        if($categories->count() == 0) {
+            Session::flash('warning', 'No categories added yet. Create a category first before submitting a new image!');
+            return redirect()->route('admin.category.create');
+        }
         $categoriesArray = [];
         foreach($categories as $category) {
             $id = $category->id;
@@ -142,7 +155,8 @@ class PortfolioController extends Controller
             'width' => 'nullable|integer',
             'height' => 'nullable|integer',
             'taken_on' => 'nullable|date',
-            'fileUpload' => 'nullable|image|max:49999'
+            'fileUpload' => 'nullable|image|max:49999',
+            'category_id' => 'required'
         ]);
 
 

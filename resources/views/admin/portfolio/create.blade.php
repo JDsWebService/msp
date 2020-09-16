@@ -26,12 +26,7 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="category">Category</label>
-                    @if($categories->count() == 0)
-                        <br>
-                        <span class="text-danger">NO CATEGORIES ADDED!</span>
-                    @else
-                        {{ Form::select('category_id', $categoriesArray, null, ['placeholder' => 'Select Category...', 'class' => 'form-control']) }}
-                    @endif
+                    {{ Form::select('category_id', $categoriesArray, null, ['placeholder' => 'Select Category...', 'class' => 'form-control', 'required']) }}
                 </div>
                 <div class="col-sm-12 mt-3">
                     <label for="description">Image Description</label>
