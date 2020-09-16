@@ -8,6 +8,7 @@ use App\Models\Portfolio\Category;
 use App\Models\Portfolio\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 use Mews\Purifier\Facades\Purifier;
 
 class PortfolioController extends Controller
@@ -78,8 +79,13 @@ class PortfolioController extends Controller
         $image->publicPath = $file->publicPath;
 
 
+        // Handle Slug & Title Information
+        $title = Purifier::clean($request->title);
+        $slug = Str::slug($title);
+
         // Add Meta Data to object
-        $image->title = Purifier::clean($request->title);
+        $image->title = $title;
+        $image->slug = $slug;
         $image->description = Purifier::clean($request->description);
         $image->taken_on = $request->taken_on;
         $image->width = $request->width;
@@ -153,8 +159,13 @@ class PortfolioController extends Controller
             $image->publicPath = $file->publicPath;
         }
 
+        // Handle Slug & Title Information
+        $title = Purifier::clean($request->title);
+        $slug = Str::slug($title);
+
         // Add Meta Data to object
-        $image->title = Purifier::clean($request->title);
+        $image->title = $title;
+        $image->slug = $slug;
         $image->description = Purifier::clean($request->description);
         $image->taken_on = $request->taken_on;
         $image->width = $request->width;
