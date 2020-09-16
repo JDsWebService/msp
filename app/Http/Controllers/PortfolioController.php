@@ -16,7 +16,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $categories = Category::orderBy('name', 'desc')->get();
-        $images = Image::orderBy('updated_at', 'desc')->get();
+        $images = Image::orderBy('updated_at', 'desc')->paginate(18);
 
         // Return the Index of the Portfolio Section
         return view('portfolio.index')->withCategories($categories)->withImages($images);

@@ -1,3 +1,20 @@
+/* Global Settings & Overrides */
+.pagination {
+    justify-content: center;
+}
+/* Active Page - Pagination */
+.pagination .page-item.active .page-link {
+    background-color: #655e7a;
+    border: #655e7a 1px solid;
+    color: #ffffff;
+}
+/* Not Active Page - Pagination */
+.pagination .page-item .page-link {
+    color: #655e7a;
+}
+.pagination .page-item .page-link:hover {
+    background-color: #D8D7DE;
+}
 /* Portfolio Section */
 .portfolio-title {
     font-weight: 100 !important;

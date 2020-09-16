@@ -43,13 +43,17 @@
                                     <img src="{{ $image->fullPath }}" class="img-fluid" alt="">
                                     <div class="portfolio-hover">
                                         <div class="portfolio-content">
-                                            <a href="{{ route('portfolio.show', $image->slug) }}" class="portfolio-popup"><i class="icon ion-search"></i></a>
-                                            <a class="h3" href="portfolio-single.html">{{ $image->title }}</a>
+                                            <a class="h3" href="{{ route('portfolio.show', $image->slug) }}">{{ $image->title }}</a>
                                             <p>{{ \Illuminate\Support\Str::words($image->description, 5, '...') }}</p>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                {{ $images->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
