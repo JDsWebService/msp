@@ -21,12 +21,12 @@ class PortfolioController extends Controller
         $images = Image::orderBy('updated_at', 'desc')->paginate(18);
 
         if(!PortfolioHandler::doCategoriesExist($categories)) {
-            Session::flash('Oops, we don\'t have anything to show you yet! Check back later!');
+            Session::flash('warning', 'Oops, we don\'t have anything to show you yet! Check back later!');
             return redirect()->route('index');
         }
 
         if(!PortfolioHandler::doImagesExist($images)) {
-            Session::flash('Oops, we don\'t have any images to show you yet! Check back later!');
+            Session::flash('warning', 'Oops, we don\'t have any images to show you yet! Check back later!');
             return redirect()->route('index');
         }
 
