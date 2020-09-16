@@ -67,7 +67,6 @@ class PortfolioController extends Controller
             'category_id' => 'required'
         ]);
 
-
         // Create the object
         $image = new Image;
 
@@ -146,7 +145,6 @@ class PortfolioController extends Controller
             'fileUpload' => 'nullable|image|max:49999',
             'category_id' => 'required'
         ]);
-
 
         // Create the object
         $image = Image::where('id', $id)->first();
