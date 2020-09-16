@@ -30,7 +30,7 @@ $factory->define(App\Models\Portfolio\Image::class, function (Faker $faker) {
     $fileName = 'testImage' . $randomNumber;
     $extension = 'png';
     $fileNameWithExt = $fileName . '.' . $extension;
-    $testPath = 'https://picsum.photos/id/' . $randomNumber . '/500/500';
+    $testPath = $faker->imageUrl(500, 500, 'cats', true, 'Maine Sky Pixels');
     $category = Category::inRandomOrder()->first();
 
     return [
