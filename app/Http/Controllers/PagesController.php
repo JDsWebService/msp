@@ -24,7 +24,8 @@ class PagesController extends Controller
     		return redirect()->route('index');
     	}
 
-    	return view('auth.login');
+    	//Session::flash('info', 'This is a test flash message');
+    	return view('index');
     }
 
     // Generate a New Google 2FA Code

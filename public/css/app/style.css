@@ -639,7 +639,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 /*--
-	features-work Start 
+	features-work Start
 --*/
 #features-work {
   padding-top: 50px;
@@ -654,7 +654,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 /*--
-	Header Start 
+	Header Start
 --*/
 header {
   background: #fff;
@@ -2162,7 +2162,6 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 
 .bg-1 {
-  background-image: url("../images/call-to-action-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

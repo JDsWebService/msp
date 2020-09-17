@@ -8,8 +8,15 @@ $(document).ready(function () {
 	$(window).on('load', function () {
 		$('#preloader').fadeOut('slow', function () {
 			$(this).remove();
+			if( $("#messagesModal").length ) {
+                $(document).ready(function(){
+                    $("#messagesModal").modal('show');
+                });
+            }
 		});
 	});
+
+
 
 	// Smooth scroll for the navigation menu and links with .scrollto classes
 	$(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
