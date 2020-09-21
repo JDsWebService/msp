@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\Tinypng;
 use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Sonata\GoogleAuthenticator\GoogleQrUrl;
 
 class PagesController extends Controller
@@ -17,15 +20,6 @@ class PagesController extends Controller
     // Testing Route for New Layouts
     public function testing() {
 
-    	$environment = config('app.env');
-    	// dd($environment);
-    	if($environment != 'local') {
-    		Session::flash('danger', 'You are trying to access a restricted page. Your action has been logged');
-    		return redirect()->route('index');
-    	}
-
-    	//Session::flash('info', 'This is a test flash message');
-    	return view('index');
     }
 
     // Generate a New Google 2FA Code

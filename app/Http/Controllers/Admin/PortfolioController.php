@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Handlers\FileHandler;
 use App\Handlers\PortfolioHandler;
 use App\Http\Controllers\Controller;
-use App\Models\Portfolio\Category;
 use App\Models\Portfolio\Image;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
