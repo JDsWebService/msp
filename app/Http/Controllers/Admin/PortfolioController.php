@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Handlers\FileHandler;
 use App\Handlers\PortfolioHandler;
 use App\Http\Controllers\Controller;
-use App\Models\Portfolio\Image;
+use App\Models\Images\Image;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -58,40 +58,41 @@ class PortfolioController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255|string',
             'description' => 'nullable|max:65535|string',
-            'width' => 'nullable|integer',
-            'height' => 'nullable|integer',
             'taken_on' => 'nullable|date',
             'fileUpload' => 'required|image|max:49999',
             'category_id' => 'required'
         ]);
 
-        // Create the object
-        $image = new Image;
-
         // Handle File Upload
-        $file = FileHandler::uploadFile($request, 'portfolio');
-        $image->fileNameWithExt = $file->fileNameWithExt;
-        $image->fileName = $file->fileName;
-        $image->extension = $file->extension;
-        $image->fileNameToStore = $file->fileNameToStore;
-        $image->fullPath = $file->fullPath;
-        $image->publicPath = $file->publicPath;
+        $indexArray = FileHandler::uploadFile($request, 'portfolio');
+
+        // If something with the FileHandler::uploadFile method went wrong...
+        if(!$indexArray) {
+            Session::flash('danger', 'Something went wrong when the FileHandler passed back the data!');
+            return redirect()->route('admin.portfolio.index');
+        }
 
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
         $slug = Str::slug($title) . '-' . strtotime(Carbon::now());
-
-        // Add Meta Data to object
+        // Create new Image Instance
+        $image = new Image();
+        // Save Data to Image Instance
         $image->title = $title;
-        $image->slug = $slug;
-        $image->description = Purifier::clean($request->description);
         $image->taken_on = $request->taken_on;
-        $image->width = $request->width;
-        $image->height = $request->height;
+        $image->description = Purifier::clean($request->description);
         $image->category_id = $request->category_id;
-
-        // Save Object
+        $image->slug = $slug;
+        $image->copyright = $indexArray['copyright'];
+        $image->artist = $indexArray['artist'];
+        $image->x_resolution = $indexArray['x_resolution'];
+        $image->y_resolution = $indexArray['y_resolution'];
+        $image->width = $indexArray['width'];
+        $image->height = $indexArray['height'];
+        $image->original_id = $indexArray['original_id'];
+        $image->thumbnail_id = $indexArray['thumbnail_id'];
+        $image->preview_id = $indexArray['preview_id'];
         $image->save();
 
         // Flash Message

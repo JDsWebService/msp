@@ -11,6 +11,6 @@ class Category extends Model
 
     // Define the relationship between Image and Category Models
     public function images() {
-        return $this->hasMany('App\Models\Portfolio\Image');
+        return $this->hasMany('App\Models\Images\Image');
     }
 }

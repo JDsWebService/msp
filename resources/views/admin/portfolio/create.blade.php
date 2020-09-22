@@ -12,19 +12,11 @@
             {{ Form::text('title', null, ['class' => 'form-control form-control-lg', 'placeholder' => 'Image Title', 'required']) }}
 
             <div class="row justify-content-center mt-3">
-                <div class="col-sm-3">
-                    <label for="width">Width</label>
-                    {{ Form::number('width', null, ['class' => 'form-control', 'placeholder' => 1024]) }}
-                </div>
-                <div class="col-sm-3">
-                    <label for="height">Height</label>
-                    {{ Form::number('height', null, ['class' => 'form-control', 'placeholder' => 768]) }}
-                </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <label for="taken_on">Taken On</label>
                     {{ Form::date('taken_on', null, ['class' => 'form-control']) }}
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <label for="category">Category</label>
                     {{ Form::select('category_id', $categories, null, ['placeholder' => 'Select Category...', 'class' => 'form-control', 'required']) }}
                 </div>
