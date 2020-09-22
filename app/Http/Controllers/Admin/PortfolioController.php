@@ -44,7 +44,6 @@ class PortfolioController extends Controller
 
         // Return the Create View
         return view('admin.portfolio.create')
-            //->withCategories($categories)
             ->withCategories($categories);
     }
 

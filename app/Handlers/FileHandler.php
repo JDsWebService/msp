@@ -15,52 +15,7 @@ use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTag;
 use lsolesen\pel\PelTiff;
 
-class FileHandler extends Controller
-{
-
-    // ---------------------------------------
-    // Database Considerations for Handler
-    // ---------------------------------------
-    // Whatever the resource you're handling you must create the following
-    // entries inside of your migration in order to utilize this handler.
-    //
-    // $table->string('fileNameWithExt');
-    // $table->string('fileName');
-    // $table->string('extension');
-    // $table->string('fileNameToStore');
-    // $table->string('fullPath');
-    // $table->string('publicPath');
-    //
-    // ---------------------------------------
-    // Create a Symbolic Link To The Storage
-    // ---------------------------------------
-    //
-    // Before using the handler, you must create a symbolic link to the
-    // storage folder by running the following command.
-    //
-    // $ php artisan storage:link
-    //
-    // ---------------------------------------
-    // Calling the Handler
-    // ---------------------------------------
-    //
-    // $file = FileHandler::uploadFile($request, 'ingredients');
-    //
-    // ---------------------------------------
-    // Using This Handler
-    // ---------------------------------------
-    //
-    // Saving the information processed in this handler is quite easy.
-    // Just make sure to save the following after calling the handler.
-    //
-    // $resource->fileNameWithExt = $file->fileNameWithExt;
-    // $resource->fileName = $file->fileName;
-    // $resource->extension = $file->extension;
-    // $resource->fileNameToStore = $file->fileNameToStore;
-    // $resource->fullPath = $file->fullPath;
-    // $resource->publicPath = $file->publicPath;
-
-
+class FileHandler extends Controller {
     /**
      * Trim from the beginning of a path
      *

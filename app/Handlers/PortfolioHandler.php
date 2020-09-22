@@ -2,13 +2,10 @@
 
 namespace App\Handlers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Portfolio\Category;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class PortfolioHandler extends Controller
+class PortfolioHandler
 {
 
     // Get Categories From Database
