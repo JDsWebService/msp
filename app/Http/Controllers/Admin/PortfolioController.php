@@ -139,7 +139,7 @@ class PortfolioController extends Controller
             'title' => 'required|max:255|string',
             'description' => 'nullable|max:65535|string',
             'taken_on' => 'nullable|date',
-            'fileUpload' => 'required|image|max:49999',
+            'fileUpload' => 'nullable|image|max:49999',
             'category_id' => 'required'
         ]);
 
@@ -148,29 +148,37 @@ class PortfolioController extends Controller
 
         // Handle File Upload
         if($request->fileUpload != null) {
-            $file = FileHandler::replaceFile($image, $request, 'portfolio');
-            $image->fileNameWithExt = $file->fileNameWithExt;
-            $image->fileName = $file->fileName;
-            $image->extension = $file->extension;
-            $image->fileNameToStore = $file->fileNameToStore;
-            $image->fullPath = $file->fullPath;
-            $image->publicPath = $file->publicPath;
+            // Handle File Upload
+            $indexArray = FileHandler::replaceFile($image, $request, 'portfolio');
+
+            // If something with the FileHandler::uploadFile method went wrong...
+            if(!$indexArray) {
+                Session::flash('danger', 'Something went wrong when the FileHandler passed back the data!');
+                return redirect()->route('admin.portfolio.index');
+            } else {
+                $image->copyright = $indexArray['copyright'];
+                $image->artist = $indexArray['artist'];
+                $image->x_resolution = $indexArray['x_resolution'];
+                $image->y_resolution = $indexArray['y_resolution'];
+                $image->width = $indexArray['width'];
+                $image->height = $indexArray['height'];
+                $image->original_id = $indexArray['original_id'];
+                $image->thumbnail_id = $indexArray['thumbnail_id'];
+                $image->preview_id = $indexArray['preview_id'];
+            }
         }
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
         $slug = Str::slug($title) . '-' . strtotime(Carbon::now());
-
-        // Add Meta Data to object
+        // Grab data from request and put it into the image instance
         $image->title = $title;
-        $image->slug = $slug;
-        $image->description = Purifier::clean($request->description);
         $image->taken_on = $request->taken_on;
-        $image->width = $request->width;
-        $image->height = $request->height;
+        $image->description = Purifier::clean($request->description);
         $image->category_id = $request->category_id;
+        $image->slug = $slug;
 
-        // Save Object
+        // Save the image
         $image->save();
 
         // Flash Message

@@ -48,23 +48,6 @@ class FileHandler extends Controller {
     }
 
     /**
-     * Handles replacing a file in the storage folder.
-     * Passes to uploadFile Method, then returns file object
-     *
-     * @param Model $resource
-     * @param Request $request
-     * @param string $storageFolder
-     * @param string $formName
-     * @return array|bool
-     */
-    public static function replaceFile(Model $resource, Request $request, $storageFolder = 'noPath', $formName = 'fileUpload') {
-        // Delete the old file
-        Storage::delete($resource->fullPath);
-        // Place the new file
-        return self::uploadFile($request, $storageFolder, $formName);
-    }
-
-    /**
      * Handles file deletion from the storage folder
      *
      * @param Model $resource
@@ -126,6 +109,18 @@ class FileHandler extends Controller {
 
         // File is not an image
         return 'file';
+    }
+
+    public static function replaceFile(Model $resource, Request $request, string $storageFolder) {
+        // First delete the old files and entries in the database
+        $deleteOldFiles = self::deleteFile($resource);
+        // Next Upload the new files and handle logic for that process
+        if($deleteOldFiles) {
+            return self::uploadFile($request, 'portfolio');
+        }
+
+        // If something went wrong then return false
+        return false;
     }
 
 } // End Class

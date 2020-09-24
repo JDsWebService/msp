@@ -24,19 +24,19 @@ class AddForeignKeysToImageIndexTable extends Migration
             $table->foreign('original_id')
                 ->references('id')
                 ->on('image_originals')
-                ->onDelete('CASCADE')
+                ->onDelete('SET NULL')
                 ->onUpdate('CASCADE');
             // Define Preview Image Key
             $table->foreign('preview_id')
                 ->references('id')
                 ->on('image_previews')
-                ->onDelete('CASCADE')
+                ->onDelete('SET NULL')
                 ->onUpdate('CASCADE');
             // Define Thumbnail Image Key
             $table->foreign('thumbnail_id')
                 ->references('id')
                 ->on('image_thumbnails')
-                ->onDelete('CASCADE')
+                ->onDelete('SET NULL')
                 ->onUpdate('CASCADE');
         });
     }

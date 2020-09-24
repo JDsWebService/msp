@@ -30,9 +30,9 @@ class CreateImageIndexTable extends Migration
             $table->string('y_resolution')->nullable();
             $table->unsignedInteger('width');
             $table->unsignedInteger('height');
-            $table->unsignedBigInteger('original_id');
-            $table->unsignedBigInteger('thumbnail_id');
-            $table->unsignedBigInteger('preview_id');
+            $table->unsignedBigInteger('original_id')->nullable();
+            $table->unsignedBigInteger('thumbnail_id')->nullable();
+            $table->unsignedBigInteger('preview_id')->nullable();
             $table->timestamps();
         });
     }

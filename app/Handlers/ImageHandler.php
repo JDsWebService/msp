@@ -100,13 +100,34 @@ class ImageHandler {
     private static function getExifData($uploadedFile) {
         // Get the Exif Data from the image
         $exif = $uploadedFile->exif();
+
+        // Define an array with keys but NULL values
+        $arr = [
+            'IMAGE_WIDTH' => null,
+            'IMAGE_LENGTH' => null,
+            'COPYRIGHT' => null,
+            'ARTIST' => null,
+            'X_RESOLUTION' => null,
+            'Y_RESOLUTION' => null,
+        ];
+
         // Put Relevant Data Into An Array To Save Later
-        self::$copyright = $arr['COPYRIGHT'] = $exif['Copyright'];
-        self::$artist = $arr['ARTIST'] = $exif['Artist'];
+        // Images will always have a width and length
         self::$originalWidth = $arr['IMAGE_WIDTH'] = $exif['COMPUTED']['Width'];
         self::$originalHeight = $arr['IMAGE_LENGTH'] = $exif['COMPUTED']['Height'];
-        self::$x_resolution = $arr['X_RESOLUTION'] = $exif['XResolution'];
-        self::$y_resolution = $arr['Y_RESOLUTION'] = $exif['YResolution'];
+        // Check to see if the rest of the values are set in the exif data
+        if(array_key_exists('Copyright', $exif)) {
+            self::$copyright = $arr['COPYRIGHT'] = $exif['Copyright'];
+        }
+        if(array_key_exists('Artist', $exif)) {
+            self::$artist = $arr['ARTIST'] = $exif['Artist'];
+        }
+        if(array_key_exists('XResolution', $exif)) {
+            self::$x_resolution = $arr['X_RESOLUTION'] = $exif['XResolution'];
+        }
+        if(array_key_exists('YResolution', $exif)) {
+            self::$y_resolution = $arr['Y_RESOLUTION'] = $exif['YResolution'];
+        }
 
         return $arr;
     }
@@ -223,12 +244,12 @@ class ImageHandler {
     }
 
     /**
-     * @param Image $image
+     * @param Image $resource
      * @return bool
      */
-    public static function deleteImages(Image $image) {
+    public static function deleteImages(Image $resource) {
         // Get all Images
-        $images = self::getAllImages($image);
+        $images = self::getAllImages($resource);
 
         foreach($images as $image) {
             // Remove from storage
