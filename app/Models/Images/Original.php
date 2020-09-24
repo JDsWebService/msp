@@ -11,6 +11,6 @@ class Original extends Model
 
     // Define the relationship to the Image Model
     public function image() {
-        return $this->belongsTo('App\Models\Images\Image');
+        return $this->belongsTo('App\Models\Images\Image', 'original_id');
     }
 }

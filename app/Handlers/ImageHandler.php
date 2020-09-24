@@ -29,6 +29,9 @@ class ImageHandler {
     // Define X & Y Resolution
     private static $x_resolution;
     private static $y_resolution;
+    // Define the thumbnail and preview sizes
+    private static $thumbnail_size = ['width' => 380, 'height' => 380];
+    private static $preview_size = ['width' => 725, 'height' => 600];
 
     public static function makeImages(object $file) {
         // Store the File Data into the class variable
@@ -38,14 +41,26 @@ class ImageHandler {
         // Define Empty Images Array
         $images = [];
         // Create Thumbnail Image
-        $images['thumbnail']['file'] = ImageIntervention::make($file->uploadedFile)->fit(450)->encode(self::$extension)->__toString();
+        $images['thumbnail']['file'] = ImageIntervention::make($file->uploadedFile)
+                                        ->resize(null, self::$thumbnail_size['height'], function($constraint) {
+                                            $constraint->aspectRatio();
+                                            $constraint->upsize();
+                                        })
+                                        ->crop(self::$thumbnail_size['width'], self::$thumbnail_size['height'])
+                                        //->resizeCanvas(self::$thumbnail_size['width'], self::$thumbnail_size['height'], 'center', false, array(255, 255, 255, 0))
+                                        ->encode(self::$extension)->__toString();
         $images['thumbnail']['type'] = "thumbnail";
         $images['thumbnail']['fileName'] = $file->filename . '_' . time() . '_thumbnail';
         $images['thumbnail']['fileNameToStore'] = $file->filename . '_' . time() . '_thumbnail' . '.' . self::$extension;
         $images['thumbnail']['fullPath'] = $file->storagePath . '/thumbnails/' . $images['thumbnail']['fileNameToStore'];
         $images['thumbnail']['pelfile'] = public_path("/storage/{$file->storageFolder}/thumbnails/{$images['thumbnail']['fileNameToStore']}");
         // Create Preview Image
-        $images['preview']['file'] = ImageIntervention::make($file->uploadedFile)->fit(900)->encode(self::$extension)->__toString();
+        $images['preview']['file'] = ImageIntervention::make($file->uploadedFile)
+                                        ->resize(self::$preview_size['width'], self::$preview_size['height'], function($constraint) {
+                                            $constraint->aspectRatio();
+                                            $constraint->upsize();
+                                        })
+                                        ->encode(self::$extension)->__toString();
         $images['preview']['type'] = "preview";
         $images['preview']['fileName'] = $file->filename . '_' . time() . '_preview';
         $images['preview']['fileNameToStore'] = $file->filename . '_' . time() . '_preview' . '.' . self::$extension;

@@ -16,9 +16,9 @@ class FileHandler extends Controller {
      * @return false|string
      */
     public static function makePublicPath($fullPath) {
-        $prefix = 'public';
+        $prefix = 'public/';
         if (substr($fullPath, 0, strlen($prefix)) == $prefix) {
-            return $trimmedPath = substr($fullPath, strlen($prefix));
+            return $trimmedPath = '/storage/' . substr($fullPath, strlen($prefix));
         }
     }
 

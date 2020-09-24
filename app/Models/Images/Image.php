@@ -16,12 +16,12 @@ class Image extends Model
 
     // Define the relationship to all the image tables
     public function original() {
-        return $this->hasOne('App\Models\Images\Original');
+        return $this->hasOne('App\Models\Images\Original', 'id', 'original_id');
     }
     public function thumbnail() {
-        return $this->hasOne('App\Models\Images\Thumbnail');
+        return $this->hasOne('App\Models\Images\Thumbnail', 'id', 'thumbnail_id');
     }
     public function preview() {
-        return $this->hasOne('App\Models\Images\Preview');
+        return $this->hasOne('App\Models\Images\Preview', 'id', 'preview_id');
     }
 }

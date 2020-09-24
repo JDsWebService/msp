@@ -170,13 +170,11 @@ class PortfolioController extends Controller
 
         // Handle Slug & Title Information
         $title = Purifier::clean($request->title);
-        $slug = Str::slug($title) . '-' . strtotime(Carbon::now());
         // Grab data from request and put it into the image instance
         $image->title = $title;
         $image->taken_on = $request->taken_on;
         $image->description = Purifier::clean($request->description);
         $image->category_id = $request->category_id;
-        $image->slug = $slug;
 
         // Save the image
         $image->save();
