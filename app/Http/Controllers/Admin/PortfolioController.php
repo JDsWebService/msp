@@ -138,10 +138,8 @@ class PortfolioController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255|string',
             'description' => 'nullable|max:65535|string',
-            'width' => 'nullable|integer',
-            'height' => 'nullable|integer',
             'taken_on' => 'nullable|date',
-            'fileUpload' => 'nullable|image|max:49999',
+            'fileUpload' => 'required|image|max:49999',
             'category_id' => 'required'
         ]);
 
@@ -189,11 +187,14 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        $ingredient = Image::where('id', $id)->first();
-        $fileDelete = FileHandler::deleteFile($ingredient);
+        $image = Image::where('id', $id)->first();
+
+        $fileDelete = FileHandler::deleteFile($image);
 
         if($fileDelete) {
-            $ingredient->delete();
+            $image->delete();
+        } else {
+            return redirect()->route('admin.portfolio.index');
         }
 
         Session::flash('success', 'Image has been deleted.');

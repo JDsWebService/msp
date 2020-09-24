@@ -222,4 +222,34 @@ class ImageHandler {
         return $indexArray;
     }
 
+    /**
+     * @param Image $image
+     * @return bool
+     */
+    public static function deleteImages(Image $image) {
+        // Get all Images
+        $images = self::getAllImages($image);
+
+        foreach($images as $image) {
+            // Remove from storage
+            Storage::delete($image->fullPath);
+            // Remove from database
+            $image->delete();
+        }
+
+        return true;
+    }
+
+    private static function getAllImages(Image $image) {
+        // Start a new blank array to store images
+        $images = [];
+
+        // Grab all Images and put them into the images array
+        array_push($images, Thumbnail::where('id', $image->thumbnail_id)->first());
+        array_push($images, Preview::where('id', $image->preview_id)->first());
+        array_push($images, Original::where('id', $image->original_id)->first());
+
+        return $images;
+    }
+
 }

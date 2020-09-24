@@ -5,6 +5,7 @@ namespace App\Handlers;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -58,7 +59,17 @@ class FileHandler extends Controller {
      * Handles file deletion from the storage folder
      **/
     public static function deleteFile(Model $resource) {
-        Storage::delete($resource->fullPath);
+        if($resource instanceof \App\Models\Images\Image) {
+            // if the resource being passed to the method is that of a portfolio image
+            // Delete the images associated with that specific entry
+            ImageHandler::deleteImages($resource);
+        } else {
+            // Do some code to delete the file.
+            // To be coded later
+            Session::flash('danger', 'FileHandler::deleteFile() detected that the passed resource was not an image.');
+            return false;
+        }
+
         return true;
     }
 
