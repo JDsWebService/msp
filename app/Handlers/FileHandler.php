@@ -10,13 +10,11 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class FileHandler extends Controller {
+
     /**
-     * Trim from the beginning of a path
-     *
-     * @param string $path
-     * @param string $prefix
-     * @return string $trimmedPath
-     **/
+     * @param $fullPath
+     * @return false|string
+     */
     public static function makePublicPath($fullPath) {
         $prefix = 'public';
         if (substr($fullPath, 0, strlen($prefix)) == $prefix) {
@@ -26,7 +24,12 @@ class FileHandler extends Controller {
 
     /**
      * Handles uploading a file to the storage folder.
-     **/
+     *
+     * @param Request $request
+     * @param string $storageFolder
+     * @param string $formFieldName
+     * @return array|bool
+     */
     public static function uploadFile(Request $request, $storageFolder = 'noPath', $formFieldName = 'fileUpload') {
         // Define File from Request
         $fileFromRequest = $request->file($formFieldName);
@@ -47,7 +50,13 @@ class FileHandler extends Controller {
     /**
      * Handles replacing a file in the storage folder.
      * Passes to uploadFile Method, then returns file object
-     **/
+     *
+     * @param Model $resource
+     * @param Request $request
+     * @param string $storageFolder
+     * @param string $formName
+     * @return array|bool
+     */
     public static function replaceFile(Model $resource, Request $request, $storageFolder = 'noPath', $formName = 'fileUpload') {
         // Delete the old file
         Storage::delete($resource->fullPath);
@@ -57,7 +66,10 @@ class FileHandler extends Controller {
 
     /**
      * Handles file deletion from the storage folder
-     **/
+     *
+     * @param Model $resource
+     * @return bool
+     */
     public static function deleteFile(Model $resource) {
         if($resource instanceof \App\Models\Images\Image) {
             // if the resource being passed to the method is that of a portfolio image
@@ -73,6 +85,13 @@ class FileHandler extends Controller {
         return true;
     }
 
+    /**
+     * Get the properties of the uploaded file
+     *
+     * @param \Illuminate\Http\UploadedFile $fileFromRequest
+     * @param string $storageFolder
+     * @return object
+     */
     private static function getFileProperties(\Illuminate\Http\UploadedFile $fileFromRequest, string $storageFolder) {
         // Define an Empty Array To Store Values In
         $file = [];
@@ -88,6 +107,14 @@ class FileHandler extends Controller {
         return (object) $file;
     }
 
+    /**
+     * Gets the type of file being uploaded.
+     * Returns the string of the file type, either image, or file
+     * Will add video extensions later on - 9-23-2020
+     *
+     * @param string $extension
+     * @return string
+     */
     private static function getFileType(string $extension) {
         // Define Acceptable Image File Extensions
         $imageExtensions = ['jpg', 'jpeg', 'png', 'bmp', 'svg', 'gif'];
