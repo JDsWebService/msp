@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// Authentication Routes
 Auth::routes(['register' => false, 'logout' => false, 'confirm' => false]);
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Public Facing Blog Routes
+Route::prefix('blog')->name('blog.')->group(function () {
+
+    Route::get('s/{slug}', 'BlogController@show')->name('show');
+    Route::get('/', 'BlogController@index')->name('index');
+
+});
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -24,6 +32,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('portfolio', 'Admin\PortfolioController')->except('show');
     // Categories
     Route::resource('category', 'Admin\CategoryController')->except('show');
+    // Blog Management Routes
+    Route::prefix('blog')->name('blog.')->group(function () {
+        Route::get('create', 'Admin\BlogController@create')->name('create');
+        Route::post('create', 'Admin\BlogController@store')->name('store');
+        Route::get('edit/{slug}', 'Admin\BlogController@edit')->name('edit');
+        Route::post('update/{slug}', 'Admin\BlogController@update')->name('update');
+        Route::post('delete/{slug}', 'Admin\BlogController@destroy')->name('delete');
+        Route::get('/', 'Admin\BlogController@index')->name('index');
+    });
 	// Dashboard
 	Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
 });
