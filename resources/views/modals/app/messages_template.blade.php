@@ -12,22 +12,22 @@
                         <hr>
                         @switch($type)
                             @case('success')
-                                <h3 class="text-success">Success!</h3>
+                            <h3 class="text-success">Success!</h3>
                             @break
                             @case('warning')
-                                <h3 class="text-warning">Heads Up!</h3>
+                            <h3 class="text-warning">Heads Up!</h3>
                             @break
                             @case('danger')
-                                <h3 class="text-danger">Something Is Wrong!</h3>
+                            <h3 class="text-danger">Something Is Wrong!</h3>
                             @break
                             @case('restricted')
-                                <h3 class="text-danger">This Is A Restricted Area!</h3>
+                            <h3 class="text-danger">This Is A Restricted Area!</h3>
                             @break
                             @case('error')
-                                <h3 class="text-danger">Error!</h3>
+                            <h3 class="text-danger">Error!</h3>
                             @break
                             @case('info')
-                                <h3 class="text-info">For Your Information...</h3>
+                            <h3 class="text-info">For Your Information...</h3>
                             @break
                             @default
                             Note To User
@@ -39,12 +39,12 @@
                             <hr>
                             <div class="row justify-content-center">
                                 @foreach($error_content->all() as $error)
-                                <div class="col-sm-1 text-right">
-                                    <img src="/icons/alerts/danger.png" style="width: 16px; height: 16px;" alt="Error Icon">
-                                </div>
-                                <div class="col-sm-11 text-left">
-                                    <p style="font-size: 16px;">{{ $error }}</p>
-                                </div>
+                                    <div class="col-sm-1 text-right">
+                                        <img src="/icons/alerts/danger.png" style="width: 16px; height: 16px;" alt="Error Icon">
+                                    </div>
+                                    <div class="col-sm-11 text-left">
+                                        <p style="font-size: 16px;">{{ $error }}</p>
+                                    </div>
                                 @endforeach
                             </div>
                         @else

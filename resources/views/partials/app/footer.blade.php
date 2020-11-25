@@ -12,7 +12,14 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-4">
-                        <img src="/imgs/droners_badge.png" alt="" class="w-50 img-fluid mb-2">
+                        <div class="row justify-content-center mb-2">
+                            <div class="col-sm-6">
+                                <img src="/imgs/droners_badge.png" alt="" class="w-100 img-fluid">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/imgs/covid-prevention.png" alt="" class="w-100 img-fluid">
+                            </div>
+                        </div>
                         <p class="copyright">
                             &copy; {{ config('app.name', 'Maine Sky Pixels') }} {{ \Carbon\Carbon::now()->year }} - All Rights Reserved
                             <br>
