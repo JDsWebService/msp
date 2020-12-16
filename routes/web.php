@@ -41,6 +41,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('delete/{slug}', 'Admin\BlogController@destroy')->name('delete');
         Route::get('/', 'Admin\BlogController@index')->name('index');
     });
+    Route::prefix('links')->name('links.')->group(function () {
+        Route::get('create', 'PrivateLinksController@create')
+            ->name('create');
+        Route::post('store', 'PrivateLinksController@store')
+            ->name('store');
+        Route::get('edit/{uuid}', 'PrivateLinksController@edit')
+            ->name('edit');
+        Route::put('update/{uuid}', 'PrivateLinksController@update')
+            ->name('update');
+        Route::delete('delete/{uuid}', 'PrivateLinksController@delete')
+            ->name('delete');
+        Route::get('/', 'PrivateLinksController@index')
+            ->name('index');
+    });
 	// Dashboard
 	Route::get('/dashboard', 'Admin\DashboardController@dashboard')->name('dashboard');
 });
@@ -60,6 +74,9 @@ Route::prefix('portfolio')->name('portfolio.')->group(function () {
     // Show Singular Image
     Route::get('/{slug}', 'PortfolioController@show')->name('show');
 });
+
+Route::get('client/files/{uuid}', 'PrivateLinksController@clientLink')
+    ->name('client.private.link');
 
 // Test Route For New Layouts
 // Route::get('/testing', 'PagesController@testing')->middleware('auth')->name('testing');
