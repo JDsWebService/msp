@@ -19,6 +19,9 @@
                             <div class="col-sm-6">
                                 <img src="/imgs/covid-prevention.png" alt="" class="w-100 img-fluid">
                             </div>
+                            <div class="col-sm-12 mt-3">
+                                <a href='https://certificates.airdata.com/UfklVH'><img alt='Airdata UAV|Drone Safety Verified Badge' src='https://certificates.airdata.com/badge?i=UfklVH&r=b8bk&t=5&m=1&size=8&c=1' style='width:266px;height:70px;border:0;image-rendering: optimizequality;image-rendering: smooth;'></a>
+                            </div>
                         </div>
                         <p class="copyright">
                             &copy; {{ config('app.name', 'Maine Sky Pixels') }} {{ \Carbon\Carbon::now()->year }} - All Rights Reserved
