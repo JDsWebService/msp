@@ -47,7 +47,7 @@
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
-                                <a href="{{ route('portfolio.index') }}" class="nav-link">Portfolio</a>
+                                <a href="https://www.flickr.com/photos/ashleygeek/albums" class="nav-link" target="_blank">Portfolio</a>
                             </li>
                             {{-- Link --}}
                             <li class="nav-item">
