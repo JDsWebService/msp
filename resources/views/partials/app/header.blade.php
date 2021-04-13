@@ -27,7 +27,7 @@
 {{-- Ionic Icon Css --}}
 <link rel="stylesheet" href="/plugins/app/Ionicons/css/ionicons.min.css">
 {{-- animate.css --}}
-<link rel="stylesheet" href="/plugins/app/animate-css/animate.css">
+{{--<link rel="stylesheet" href="/plugins/app/animate-css/animate.css">--}}
 {{-- Google ReCAPTCHA --}}
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
